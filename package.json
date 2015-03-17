@@ -1,0 +1,16 @@
+{
+  "name": "gulp-supplier",
+  "version": "1.0.0",
+  "description": "Dependency supplier per various builds",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "concatinate",
+    "build"
+  ],
+  "author": "Dmitry Lapshukov",
+  "license": "MIT"
+}
