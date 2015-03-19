@@ -15,9 +15,10 @@ function supply(adds) {
 	glob(adds, function(err, files) {
 	    var
 	        flen,
-	        cbc;
+	        cbc,
+	        fname;
 
-	    function writeStream() {
+	    function writeStream(fname) {
 
 	    	return function (err, add) {
 	    		var
@@ -29,7 +30,7 @@ function supply(adds) {
 	        		nfile = new File({
 	        			cwd: file.cwd,
 	        			base: file.base,
-	        			path: file.path,
+	        			path: fname,
 	        			contents: ncontents
 	        		});
 		     		stream.push(nfile);
@@ -57,7 +58,8 @@ function supply(adds) {
 
 	        for (; flen--;) {
 
-	            fs.readFile(files[flen], writeStream());
+	        	fname = files[flen];
+	            fs.readFile(fname, writeStream(fname));
 	        }
 	    }
 	});

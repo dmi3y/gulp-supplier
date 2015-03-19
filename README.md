@@ -10,8 +10,8 @@ Let's assume you have following files into the project:
 - node-specific.js
 - browser-specific.js
 
-And what you want is to build `npm` and `bower` build files.
-That's where supplier could get handy, so the build task will look like.
+And what you want is to create `npm` and `bower` build files.
+That's where supplier could get handy, so the build task may look like.
 
 		...
 		gulp.task('build', function() {
@@ -23,7 +23,27 @@ That's where supplier could get handy, so the build task will look like.
 			        suffix: "-build" // changing build name
 			    }))
 			    .pipe(gulp.dest("./build")); // outputs for npm and bower
+		});
 		...
 
 
+This is a schema of what happening:
 
+                     common-library.js
+                        (streaming)
+                            |
+                            |
+           ---------------------------------------
+           | supplier takes all the files,       |
+           | and fork common library as separate |
+           | stream per every file.              |
+           ---------------------------------------
+           		|                           |
+   		common-library.js +           common-library.js +
+   		node-specefic.js              browser-specific.js
+   				|                           |
+   		    (streaming)                 (streaming)
+   		      .....						  .....
+
+
+Every forked File stream inherits `filepath` attribute from specefic file.
