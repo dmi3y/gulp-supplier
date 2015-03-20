@@ -33,11 +33,11 @@ This is a schema of what happening:
                         (streaming)
                             |
                             |
-           ---------------------------------------
-           | supplier takes all the files,       |
-           | and fork common library as separate |
-           | stream per every file.              |
-           ---------------------------------------
+           ----------------------------------------
+           | supplier takes all the files,        |
+           | and forks common library as separate |
+           | stream per every file.               |
+           ----------------------------------------
            		|                           |
    		common-library.js +           common-library.js +
    		node-specefic.js              browser-specific.js
@@ -46,4 +46,11 @@ This is a schema of what happening:
    		      .....						  .....
 
 
-Every forked File stream inherits `filepath` attribute from specefic file.
+Every forked File stream inherits `filepath` attribute (name) from its specefic file.
+Forked stream comes first, specefic stream comes second.
+
+## Releases
+
+## License
+
+MIT
