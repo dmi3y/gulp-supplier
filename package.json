@@ -3,8 +3,15 @@
   "version": "1.0.0",
   "description": "Dependency(es) supplier.",
   "main": "index.js",
+  "homepage": "https://github.com/dmi3y/gulp-supplier",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dmi3y/gulp-supplier.git"
+  },
+  "author": "Dmitry Lapshukov",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./node_modules/gulp/bin/gulp.js"
   },
   "keywords": [
     "gulp",
@@ -12,8 +19,6 @@
     "concatinate",
     "build"
   ],
-  "author": "Dmitry Lapshukov",
-  "license": "MIT",
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-clean": "^0.3.1",
