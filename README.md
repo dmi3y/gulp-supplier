@@ -46,10 +46,12 @@ This is a schema of what happening:
    		      .....						  .....
 
 
-Every forked File stream inherits `filepath` attribute (name) from its specefic file.
-Forked stream comes first, specefic stream comes second.
+Every 'forked' File stream inherits `filepath` attribute (name) from its specefic file.
+In the output, common stream comes first, specefic stream comes second.
 
 ## Releases
+
+1.0.0 (3/21/15) - First release.
 
 ## License
 
